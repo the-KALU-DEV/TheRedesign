@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-5 py-2 font-semibold text-white rounded-full shadow-md bg-violet-500 hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75;
+  }
+
+  div#course_content *, section#roadmap * {
+    @apply font-body
+  }
+  
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* .get-Started-Container {
+  background-color: #fafcff;
+  background-image: url("../../public/icons/left-bg-vector.svg"),
+    url("../../public/icons/right-bg-vector.svg");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 150px;
+}
+
+.news-letter-Container {
+  background-image: url("../../public/Newsletter-bg.jpg");
+  height: 65vh;
+  background-position: center;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer-Container {
+  background-color: #005cdd;
+  background-image: url("../../public/icons/left-bg-vector.svg"),
+    url("../../public/icons/right-bg-vector.svg");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 200px;
+  /* height: 100vh; 
+  /* z-index: 10px; 
+}
+
+.blog-vision-borader-Container {
+  background-color: #fafcff;
+  background-image: url("../../public/icons/left-bg-vector.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 150px;
+  /* height: 100vh; 
+  z-index: 10px;
+}
+
+.Collaborate-Container {
+  background-color: #fafcff;
+  background-image: url("../../public/icons/right-bg-vector.svg");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 150px;
+  /* height: 50vh; 
+  z-index: 10px;
+}
+
+.auth-container {
+  background-color: #005cdd;
+  background-image: url("../../public/Login/auth-top-right.svg"),
+    url("../../public/Login/auth-top-left.svg");
+  background-position: top right, top left;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 100px;
+  height: 12vh;
+  z-index: 50px;
+} 
+
+*/
+
+.greenOutline:hover {
+  background: white;
+  color: #2ab255;
+  border: 1px solid #2ab255;
+}
+
+.greenBackground:hover {
+  color: white;
+  background-color: #2ab255;
+}
+
+@media only screen and (max-width: 600px) {
+  /*Big smartphones [426px -> 600px]*/
+
+  .footer-Container {
+    background-size: 150px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+}
+
+/* TEAMS */
+
+.team-image:hover .overlay {
+  transform: translateY(0);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "__Red_Hat_Display_ee1ced";
+}
+
+
+html {
+  scroll-padding-top: var(--scroll-padding, 15rem);
+}
