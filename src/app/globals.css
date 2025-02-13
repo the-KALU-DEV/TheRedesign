@@ -1,14 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer components {
-  .btn-primary {
+  /* .btn-primary {
     @apply px-5 py-2 font-semibold text-white rounded-full shadow-md bg-violet-500 hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75;
-  }
+  } */
 
   div#course_content *, section#roadmap * {
-    @apply font-body
+    font-family: font-body;
   }
   
 }
