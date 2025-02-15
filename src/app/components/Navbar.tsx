@@ -33,11 +33,11 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
 
   return (
-    <nav className="fixed z-50 w-full top-0 bg-white shadow-md">
+    <nav className="fixed z-50 w-full top-0 bg-[#F8F8F8] shadow-xs">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <Image src="/logo.svg" alt="Logo" width={120} height={50} />
+          <Image src="/logo.svg" alt="Codetivite" width={120} height={50} />
         </Link>
 
         {/* Desktop Navigation */}

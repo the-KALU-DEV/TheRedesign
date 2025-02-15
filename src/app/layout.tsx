@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`min-h-screen antialiased`}>
         <Navbar />
-        <main className="container">
+        <main className="container overflow-hidden">
         {children}
         <PreFooter />
         </main>

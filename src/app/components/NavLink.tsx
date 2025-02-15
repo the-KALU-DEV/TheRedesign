@@ -44,7 +44,7 @@ export default function NavLink({ href, title }: NavLinkProps) {
     <Link
       href={href}
       className={clsx(
-        "text-black hover:text-green-600 transition relative",
+        "text-black hover:text-green-600 hover:font-semibold transition relative",
         pathname === href && "text-green-500 font-semibold"
       )}
     >
