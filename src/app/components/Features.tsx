@@ -196,8 +196,8 @@ export default function Features() {
         <p className="mt-4 font-bold text-xl text-[#2AB255] md:text-2xl leading-relaxed tracking-tight max-w-2xl text-center">
           What We Offer
         </p>
-        <h2 className="text-3xl mt-2 mb-16 md:text-5xl tracking-tighter text-center font-regular">
-          Why Should You Join Codetivite?
+        <h2 className="text-3xl mt-2 mb-16 md:text-5xl tracking-tighter text-center font-semibold">
+          Why Should You Join codetivite?
         </h2>                    
       </div>
         

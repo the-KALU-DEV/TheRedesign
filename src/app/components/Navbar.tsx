@@ -1,8 +1,8 @@
-"use client";
+ "use client";
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown, FiChevronsDown } from "react-icons/fi";
 import Image from "next/image";
 import NavLink from "./NavLink";
 import MenuOverlay from "./MenuOverlay";
@@ -57,7 +57,8 @@ export default function Navbar() {
                       className="flex items-center gap-2 text-black hover:text-green-700 transition"
                     >
                       {link.title}
-                      <FiChevronDown className="text-gray-500 group-hover:text-green-700 transition" />
+                      
+                      <FiChevronDown className="text-gray-500 group-hover:text-green-600 transition"/ >
                     </button>
 
                     {/* Dropdown Menu */}
@@ -101,3 +102,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

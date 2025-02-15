@@ -8,7 +8,7 @@ const items = [
   { src: "/product-design.svg" },
   { src: "/product-management.svg" },
   { src: "/technical-writing.svg" },
-  { src: "/technical-writing.svg" },
+  { src: "/cyber-security.svg" },
 ];
 
 // Parent container animation
