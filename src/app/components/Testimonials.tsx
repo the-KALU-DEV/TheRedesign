@@ -26,6 +26,20 @@ const testimonials = [
     feedback:
       "Navigating the tech job market was tough, but with the right support and guidance, I was able to break in and thrive!",
   },
+  {
+    name: "Akpundu Chierika",
+    role: "Product Manager, Cohort 3",
+    image: "/testimonial-avatar.png",
+    feedback:
+      "Navigating the tech job market was tough, but with the right support and guidance, I was able to break in and thrive!",
+  },
+  {
+    name: "Azoba Mercy",
+    role: "Product Manager, Cohort 3",
+    image: "/testimonial-avatar.png",
+    feedback:
+      "Navigating the tech job market was tough, but with the right support and guidance, I was able to break in and thrive!",
+  },
 ];
 
 export default function Testimonials() {

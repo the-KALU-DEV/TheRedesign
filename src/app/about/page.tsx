@@ -1,7 +1,7 @@
 import OurVision from "../components/OurVision";
 import AboutUs from "../components/AboutUs";
 import Stats from "../components/Stats";
-import FAQS from "../components/FAQS";
+import AboutUsFAQ from "../components/AboutUsFAQ";
 
 
 export default function About() {
@@ -11,7 +11,7 @@ export default function About() {
             <OurVision />
             <AboutUs />
             <Stats />
-            <FAQS />
+            <AboutUsFAQ />
         </>
     );
 }

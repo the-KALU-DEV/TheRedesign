@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import React, { useState } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
@@ -40,8 +41,8 @@ export default function Navbar() {
           <Image src="/logo.svg" alt="Codetivite" width={120} height={50} />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-1 justify-center">
+        {/* Desktop Navigation (Visible at 891px and above) */}
+        <div className="hidden min-[891px]:flex flex-1 justify-center">
           <ul className="flex space-x-8">
             {navLinks.map((link, index) => (
               <li key={index} className="relative group">
@@ -61,12 +62,9 @@ export default function Navbar() {
 
                     {/* Dropdown Menu */}
                     {dropdownOpen === index && (
-                      <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md p-2 ">
+                      <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md p-2">
                         {link.dropdown?.map((subLink, subIndex) => (
-                          <li
-                            key={subIndex}
-                            className="px-4 py-2"
-                          >
+                          <li key={subIndex} className="px-4 py-2">
                             <NavLink href={subLink.href} title={subLink.title} />
                           </li>
                         ))}
@@ -79,8 +77,8 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Get Started Button (Desktop) */}
-        <div className="hidden md:flex">
+        {/* Get Started Button (Visible at 891px and above) */}
+        <div className="hidden min-[891px]:flex">
           <Link href="/get-started">
             <StyledButton className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition">
               Get Started
@@ -88,9 +86,9 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (Visible Up to 890px) */}
         <button
-          className="md:hidden text-2xl text-black"
+          className="block min-[891px]:hidden text-2xl text-black"
           onClick={() => setNavbarOpen(!navbarOpen)}
           aria-label="Toggle Menu"
         >
@@ -98,7 +96,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay (Visible When Open) */}
       {navbarOpen && <MenuOverlay links={navLinks} />}
     </nav>
   );

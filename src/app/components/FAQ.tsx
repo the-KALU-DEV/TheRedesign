@@ -1,90 +1,56 @@
 "use client";
 
 import { useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { twMerge } from "tailwind-merge";
 
-const faqList = [
-  {
-    question: "Why is your price very cheap compared to other tech learning platforms?",
-    answer: `You're right. We are aware of this and we are okay with it. Here’s why:
-    - Codetivite is a new learning platform. This is an opportunity for our first batch of students to take advantage before prices go up.
-    - We see tech as a wealth opportunity, and tuition shouldn’t be a barrier.`,
-  },
-  {
-    question: "I absolutely have zero knowledge of tech. Can I apply?",
-    answer: "Yes! Our programs are designed for beginners and experienced learners alike.",
-  },
-  {
-    question: "Are classes virtual (online) or physical?",
-    answer: "Our classes are primarily online, with mentorship and hands-on projects.",
-  },
-  {
-    question: "I'm still a student. Can I apply?",
-    answer: "Yes! Students, professionals, and career changers are all welcome.",
-  },
-  {
-    question: "I would like to know the learning system at Codetivite?",
-    answer: "We offer structured learning paths, real-world projects, and mentorship.",
-  },
-  {
-    question: "Do I need a degree to succeed/get a job in tech?",
-    answer: "No. Many successful developers and designers started without formal degrees.",
-  },
-  {
-    question: "Will I need to pay to get my tech certificate?",
-    answer: "No, the certification is included in the program at no extra cost.",
-  },
-  {
-    question: "Will I get a job right after graduating?",
-    answer: "While we can't guarantee immediate placement, we equip you with job-ready skills.",
-  },
-  {
-    question: "I have been rejected a lot of times before. How does your program help?",
-    answer: "We offer mentorship, portfolio-building, and interview prep to improve your chances.",
-  },
-];
-
-interface FAQsProps {
-  fullWidth?: boolean;
+interface FAQItem {
+  question: string;
+  answer: string | React.ReactNode; // Supports JSX (lists, paragraphs, etc.)
 }
 
-export default function FAQ({ fullWidth = false }: FAQsProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+interface FAQsProps {
+  faqs?: FAQItem[]; // Optional, but defaults to []
+  fullWidth?: boolean;
+  iconColor?: string;
+  bgColor?: string;
+  defaultOpenIndex?: number | null;
+}
+
+export default function FAQ({
+  faqs = [], // Default to an empty array to avoid undefined issues
+  fullWidth = false,
+  iconColor = "text-green-600",
+  bgColor = "bg-gray-100",
+  defaultOpenIndex = null,
+}: FAQsProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className={twMerge("py-16 bg-gray-50", fullWidth ? "w-full" : "container mx-auto px-6 lg:px-12")}>
-      <h5 className="text-green-600 text-lg font-semibold text-center">FAQs</h5>
-      <h2 className="text-3xl md:text-4xl font-bold text-center mt-2">Frequently Asked Questions</h2>
+    <section className={twMerge("py-16", fullWidth ? "w-full" : "container mx-auto px-6 lg:px-12")}>
+      <h2 className="text-3xl md:text-4xl font-bold text-center">Frequently Asked Questions</h2>
 
       <div className="mt-10 space-y-4">
-        {faqList.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-[#F6FAFF] rounded-lg shadow-sm border border-gray-200"
-          >
-            <button
-              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium text-gray-800"
-              onClick={() => toggleFAQ(index)}
-            >
-              {faq.question}
-              {openIndex === index ? (
-                <FaMinus className="text-green-500" />
-              ) : (
-                <FaPlus className="text-green-500" />
-              )}
-            </button>
-            {openIndex === index && (
-              <div className="px-6 py-4 text-gray-600 border-t border-gray-200">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
+        {faqs.length > 0 ? (
+          faqs.map((faq, index) => (
+            <div key={index} className={twMerge(bgColor, "rounded-lg shadow-md border border-gray-200")}>
+              <button
+                className="w-full flex justify-between items-center p-5 font-semibold text-left"
+                onClick={() => toggleFAQ(index)}
+              >
+                {faq.question}
+                {openIndex === index ? <FaMinus className={iconColor} /> : <FaPlus className={iconColor} />}
+              </button>
+              {openIndex === index && <div className="p-5 pt-0 text-gray-600">{faq.answer}</div>}
+            </div>
+          ))
+        ) : (
+          <p className="text-center text-gray-500">No FAQs available.</p>
+        )}
       </div>
     </section>
   );

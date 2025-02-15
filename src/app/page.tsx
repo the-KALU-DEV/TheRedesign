@@ -5,7 +5,7 @@ import About from './components/About';
 import Features from "./components/Features";
 import CourseTracks from "./components/CourseTracks";
 import Testimonials from "./components/Testimonials";
-import FAQ from './components/FAQ';
+import HomeFAQ from './components/HomeFAQ';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
           <Features />
           <CourseTracks />
           <Testimonials />
-          <FAQ />
+          <HomeFAQ />
         </>
   );
 }
