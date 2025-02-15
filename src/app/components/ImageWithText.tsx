@@ -35,7 +35,7 @@ export default function ImageWithText({
               width={500}
               height={500}
               priority
-              sizes="(max-width: 9000px) 90vw, 200px, (max-width: 1040px) 20vw, 300px, (max-width: 2040px) 400px"
+              sizes="(max-width: 900px) 90vw, 200px, (max-width: 1040px) 20vw, 300px, (max-width: 2040px) 400px"
               className="rounded-lg object-cover w-full h-auto"
             />
           </div>

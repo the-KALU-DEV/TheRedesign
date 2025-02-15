@@ -190,12 +190,13 @@ const containerVariants = {
 
 export default function Features() {
   return (
-    <section>
+    <section className="w-full py-20 bg-gray-50">
+    <div className="container mx-auto px-6 lg:px-12">
     <div className="flex gap-4 flex-col items-center">
-        <p className="mt-4 font-bold text-xl text-[#2AB255] md:text-xl leading-relaxed tracking-tight max-w-2xl text-center">
+        <p className="mt-4 font-bold text-xl text-[#2AB255] md:text-2xl leading-relaxed tracking-tight max-w-2xl text-center">
           What We Offer
         </p>
-        <h2 className="text-4xl mb-8 md:text-5xl tracking-tighter text-center font-regular">
+        <h2 className="text-3xl mt-2 mb-16 md:text-5xl tracking-tighter text-center font-regular">
           Why Should You Join Codetivite?
         </h2>                    
       </div>
@@ -210,7 +211,8 @@ export default function Features() {
       {features.map((feature, index) => (
         <FeatureCard key={index} {...feature} />
       ))}
-    </motion.div> 
+    </motion.div>
+    </div>
     </section>   
   );
 }

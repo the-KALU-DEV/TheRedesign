@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Navbar from "./components/Navbar";
 import PreFooter from "./components/PreFooter";
+import Footer from "./components/Footer";
 
 //import { Red_Hat_Display } from "next/fonts/google";
 
@@ -28,9 +29,9 @@ export default function RootLayout({
         {children}
         <PreFooter />
         </main>
-        
-        <footer className="w-full max-w-screen-lg mx-auto px-6 sm:px-12">
-      </footer>
+        <Footer />
+        {/* <footer className="w-full max-w-screen-lg mx-auto px-6 sm:px-12">
+      </footer> */}
       </body>
     </html>
   );

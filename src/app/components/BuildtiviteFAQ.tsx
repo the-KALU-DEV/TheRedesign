@@ -1,5 +1,6 @@
 "use client";
 
+import { twMerge } from "tailwind-merge";
 import FAQ from "./FAQ";
 
 const faqs = [
@@ -44,17 +45,18 @@ const faqs = [
 ];
 
 export default function BuildtiviteFAQ() {
-  return (
-    <section className="w-full py-20 bg-white">
-        <div>
-          <FAQ
-            faqs={faqs}
-            fullWidth={true} 
-            iconColor="text-blue-600" 
-            bgColor="bg-gray-100" 
-            defaultOpenIndex={0} 
-          />
-        </div>    
-    </section>
-  );
+    return (
+        <section className={twMerge("py-16 bg-gray-50 px-30 lg:px-32", true ? "w-full " : "container mx-auto")}>
+          <h5 className="text-green-600 text-lg font-semibold text-center">FAQs</h5>
+          <div>
+            <FAQ
+              faqs={faqs}
+              fullWidth={true}
+              iconColor="text-blue-600"
+              bgColor="bg-gray-100"
+              defaultOpenIndex={0}
+            />
+          </div>    
+        </section>
+      );
 }

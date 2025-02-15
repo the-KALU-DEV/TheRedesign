@@ -54,15 +54,17 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-[#F9F9F9]">
-      <div className="container mx-auto px-6 lg:px-12">
-        {/* Title */}
-        <h5 className="text-green-600 text-lg font-semibold text-center">
+    <section className="w-full py-20 bg-gray-50">
+    <div className="container mx-auto px-6 lg:px-12">
+    <div className="flex gap-4 flex-col items-center">
+    <h5 className="text-green-600 text-lg font-semibold text-center">
           Testimonials
         </h5>
         <h2 className="text-3xl md:text-4xl font-bold text-center mt-2">
           Our Success Story
-        </h2>
+        </h2>                    
+      </div>
+        
 
         {/* Testimonial Section */}
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
