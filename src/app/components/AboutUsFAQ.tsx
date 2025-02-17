@@ -1,6 +1,5 @@
 "use client";
 
-import { FiPlusCircle } from "react-icons/fi";
 import Image from "next/image";
 import FAQ from "./FAQ"; // Import the flexible FAQ component
 
