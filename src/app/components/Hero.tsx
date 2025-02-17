@@ -86,7 +86,7 @@ export default function Hero() {
   return (
     <div className="relative container w-full flex flex-col items-center justify-center text-center py-10 lg:py-20 gap-4 md:gap-6">
       {/* Background Vector */}
-      <div className="absolute inset-0 w-full h-full -z-10">
+      <div className="absolute -top-2 -left-2 w-full h-full -z-10">
         <Image
           src="/Vector.svg"
           alt="Background"
@@ -96,7 +96,7 @@ export default function Hero() {
       </div> 
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center gap-4 relative z-10 p-8 md:p-10">
+      <div className="flex flex-col items-center gap-4 relative z-10 p-12 md:p-16">
         <h1 className="text-4xl md:text-6xl tracking-tighter text-center font-regular">
           Land Your Dream Tech Job Fast, EVEN In A Highly Competitive Job Market.
         </h1>

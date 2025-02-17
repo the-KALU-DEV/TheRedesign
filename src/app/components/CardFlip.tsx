@@ -20,6 +20,11 @@ export default function CardFlip({ frontImage, backText }: CardFlipProps) {
             sizes="(max-width: 500px) 90vw, (max-width: 1200px) 50vw, 27vw"
             className="object-cover rounded-lg transition-opacity duration-500 group-hover:opacity-0"
           />
+          <div className="font-bold absolute bottom-3 left-0 right-0 text-white text-center py-2">
+          <div className="font-bold text-2xl md:text-3xl absolute bottom-5 left-0 right-0 text-white text-center py-2">
+            {backText}
+          </div>
+          </div>
         </div>
 
         {/* Back Side */}
