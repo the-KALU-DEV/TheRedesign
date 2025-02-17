@@ -34,9 +34,12 @@ export default function About() {
       <ImageWithText
         imageSrc="/codetivitelearning.png"
         imageAlt="Tech Learner" >
-        <TextBlock title="Codetivite is a new tech learning platform."
+        <TextBlock title="codetivite is a new tech learning platform."
           subtitle="About us:"
-          description="You can see us as your career mentor who will be there for you every step of the way. Our goal is to help tech-aspirants transition from new-techies to full-time employees..."
+          description="You can see us as your career mentor who will be there for you every step of the way. And this is why: Our single aim is to help tech-aspirants transition from new-techies to become full time employees of reputable brands across Africa and the world. 
+Because it is general knowledge that navigating the job market is overwhelming and challenging. So this is why we want to step in as a guide and mentor to help new techies dominate the highly competitive job market. How do we intend to achieve this? You ask?
+
+Everything we do at Codetivite is what we call: Practical-based-learning. We will watch you closely as you build real world projects to test your progress. The projects you build, will simultaneously become your portfolio which you can submit to potential employers."
           justifyStart />
       </ImageWithText>
 
@@ -45,9 +48,9 @@ export default function About() {
         imageSrc="/learnwithus.png"
         imageAlt="User"
         reverse>
-        <TextBlock title="Our Mission is to help you as a new techie."
+        <TextBlock title="Our Mission is to help you as a new Techie."
         subtitle="Our commitment to you:"
-        description="We help new techies stay patient and consistent in their job search. Our goal is to reduce the time it takes to get hired by 87%..."
+        description="Help you as a new techie stay patient and consistent in your search for jobs. But most importantly, reduce the time frame it normally takes to get jobs and increase your chances of getting hired by 87%"
         justifyStart/>
       </ImageWithText>
       

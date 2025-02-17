@@ -103,7 +103,7 @@ export default function FAQ({
   faqs = [],
   fullWidth = false,
   iconColor = "text-blue-500",
-  bgColor = "bg-bgFAQ", // Changed from raw hex code
+  bgColor = "bg-FAQ", // Changed from raw hex code
   defaultOpenIndex = null,
 }: FAQsProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex ?? null);
@@ -113,13 +113,13 @@ export default function FAQ({
   };
 
   return (
-    <section className={twMerge("py-2", fullWidth ? "w-full" : "container mx-auto px-8 lg:px-12")}>
+    <section className={twMerge("py-2 px-4 sm:px-6 md:px-8 bg-white", fullWidth ? "w-full" : "container mx-auto")}>
       <h2 className="text-3xl md:text-4xl font-bold text-center">Frequently Asked Questions</h2>
 
-      <div className="mt-6 md:mt-8 space-y-4">
+      <div className="mt-10 md:mt-14 space-y-4">
         {faqs.length > 0 ? (
           faqs.map((faq, index) => (
-            <div key={index} className={twMerge(bgColor, "rounded-lg border border-gray-200")}>
+            <div key={index} className={twMerge(bgColor, "bg-FAQ rounded-lg")}>
               <button
                 className="w-full flex justify-between items-center px-6 py-4 text-left font-medium text-gray-800"
                 onClick={() => toggleFAQ(index)}

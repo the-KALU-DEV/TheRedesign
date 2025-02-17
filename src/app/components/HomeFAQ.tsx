@@ -108,7 +108,7 @@ const faqs = [
 
 export default function HomeFAQ() {
   return (
-    <section className={twMerge("py-16 bg-gray-50 px-30 lg:px-32", true ? "w-full " : "container mx-auto")}>
+    <section className={twMerge("py-16 bg-white px-30 lg:px-32", true ? "w-full " : "container mx-auto")}>
       <TitleSubtitle title="FAQs" centered />
         <FAQ
           faqs={faqs}

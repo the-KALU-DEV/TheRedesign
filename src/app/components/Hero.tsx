@@ -97,7 +97,7 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="flex flex-col items-center gap-4 relative z-10 p-12 md:p-16">
-        <h1 className="text-4xl md:text-6xl tracking-tighter text-center font-regular">
+        <h1 className="text-4xl md:text-6xl tracking-tighter text-center font-bold">
           Land Your Dream Tech Job Fast, EVEN In A Highly Competitive Job Market.
         </h1>
         <p className="text-sm font-normal md:text-xl leading-relaxed tracking-tight text-[#575757] max-w-2xl">

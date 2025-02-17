@@ -3,7 +3,7 @@ import TitleSubtitle from "./TitleSubtitle";
 
 const courses = [
   {
-    title: "Software Development",
+    //title: "Software Development",
     description:
       "Harness and sharpen your passion with 'REACT' together with other programming languages.",
     image: "/software-development.png", 
@@ -11,7 +11,7 @@ const courses = [
     tagColor: "#2AB255", // Green
   },
   {
-    title: "Product Design",
+    //title: "Product Design",
     description:
       "Master product design and collaborate with teams to create innovative user-friendly products.",
     image: "/product-design.png", 
@@ -19,7 +19,7 @@ const courses = [
     tagColor: "#0A68EC", // Blue
   },
   {
-    title: "Product Management",
+    //title: "Product Management",
     description:
       "Learn the art of product strategy development and kickstart a career in Tech.",
     image: "/product-management.png", 
@@ -30,7 +30,7 @@ const courses = [
 
 export default function CourseTracks() {
   return (
-    <section className="w-full py-20 bg-gray-50">
+    <section className="w-full py-20 bg-white">
     <div className="container mx-auto px-6 lg:px-12">
       <TitleSubtitle title="See Our Courses" subtitle="Check Out Our Course Tracks" centered/>      
 

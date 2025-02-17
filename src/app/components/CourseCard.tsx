@@ -2,7 +2,7 @@ import Image from "next/image";
 import StyledButton from "./StyledButton";
 
 interface CourseCardProps {
-  title: string;
+  title?: string | "";
   description: string;
   image: string;
   tag: string;
@@ -23,12 +23,12 @@ export default function CourseCard({
       : "text-gray-900";
 
   return (
-    <div className="bg-white shadow-md rounded-2xl overflow-hidden p-4 flex flex-col h-full">
+    <div className="bg-[#F8F8F8EE] shadow-md rounded-2xl overflow-hidden p-4 flex flex-col h-full">
       {/* Image Section */}
       <div className="relative w-full h-56 rounded-lg overflow-hidden">
         <Image 
           src={image} 
-          alt={title} 
+          alt="{title}" 
           layout="fill" 
           objectFit="cover" 
           className="rounded-lg"
@@ -49,7 +49,7 @@ export default function CourseCard({
         <p className="text-gray-600 text-sm mt-2 flex-grow">{description}</p>
 
         {/* Buttons */}
-        <div className="mt-4 flex flex-col xl:flex-row gap-3">
+        <div className="mt-4 flex flex-col mt-8 lg:flex-row lg:justify-between gap-3">
           <StyledButton muted>
             Learn More
           </StyledButton>

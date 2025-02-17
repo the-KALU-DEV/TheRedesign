@@ -191,7 +191,7 @@ const containerVariants = {
 
 export default function Features() {
   return (
-    <section className="w-full py-10 bg-gray-50">
+    <section className="w-full py-10 bg-[#FBFBFB]">
     <div className="container mx-auto px-6 lg:px-12">
     <TitleSubtitle title="What We Offer" subtitle="Why Should You Join codetivite?" centered className="pb-6 md:pb-8" />
         
