@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import StyledButton from "./StyledButton";
+import StyledButton from './StyledButton';
 
 export default function PreFooter() {
   return (
@@ -14,7 +14,7 @@ export default function PreFooter() {
           to create amazing projects.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/90 relative">
-          If our training program is a photo, then we have 'cropped out' our curriculum
+          If our training program is a photo, then we have &quot;cropped out&quot; our curriculum
           to cut out all the ugly-time-wasting and unnecessary parts to teach you only
           the juicy part that you need to succeed in the real world.
         </p>

@@ -87,7 +87,7 @@ export default function Footer() {
         <div className="w-full md:w-2/3 text-center md:text-left">
           <h2 className="text-3xl font-bold">Subscribe to our Newsletter</h2>
           <p className="text-gray-300 mt-4 text-lg">
-            Join our community of techies and receive regular updates on the latest tech trends, new courses, and special promotions. Don't miss out on the opportunity to level up your tech skills and achieve your goals.
+            Join our community of techies and receive regular updates on the latest tech trends, new courses, and special promotions. Don&apos;t miss out on the opportunity to level up your tech skills and achieve your goals.
           </p>
           <div className="w-full mt-6 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <input
@@ -98,7 +98,7 @@ export default function Footer() {
             <StyledButton className="w-full sm:w-auto px-8 py-4 font-medium">Subscribe</StyledButton>
           </div>
           <p className="text-gray-500 text-xs mt-6">
-            By clicking Subscribe you're confirming that you agree with our <span className="underline">Terms and Conditions</span>.
+            By clicking Subscribe you&apos;re confirming that you agree with our <span className="underline">Terms and Conditions</span>.
           </p>
         </div>
       </div>
