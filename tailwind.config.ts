@@ -55,6 +55,7 @@ const config: Config = {
         semiBlack: "#545454",
         veryLightGreen: "#E5F0E8",
         textGray: "#575757",
+        bgFAQ: "#F6FAFF"
       },
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -1,21 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { twMerge } from "tailwind-merge";
+// import { useState } from "react";
+// import { useRouter } from "next/navigation";
+//import { twMerge } from "tailwind-merge";
 
 export default function BuildtiviteRegister() {
-  const router = useRouter();
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    gender: "",
-  });
+  //const router = useRouter();
+  // const [formData, setFormData] = useState({
+  //   fullName: "",
+  //   email: "",
+  //   phone: "",
+  //   gender: "",
+  // });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
   return (
     <section className="flex flex-col items-center justify-center px-4 bg-gray-50">

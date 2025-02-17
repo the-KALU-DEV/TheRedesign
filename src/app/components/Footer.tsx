@@ -103,7 +103,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <hr className="text-gray-800 w-full mt-8" />
+      <hr className="bg-gray-800 w-full mt-8" />
 
       {/* Lower Section - Footer Links */}
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start mt-16 space-y-8 md:space-y-0">

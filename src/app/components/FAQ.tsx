@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
-import NavbarDropdown from "./icons/NavbarDropdown";
 import Image from "next/image";
 
 interface FAQItem {
@@ -15,18 +13,18 @@ interface FAQsProps {
   faqs?: FAQItem[]; // Optional, but defaults to []
   fullWidth?: boolean;
   iconColor?: string;
-  bgColor?: string;
+  bgColor?: string; // Expect a valid Tailwind class
   defaultOpenIndex?: number | null;
 }
 
 export default function FAQ({
-  faqs = [], // Default to an empty array to avoid undefined issues
+  faqs = [],
   fullWidth = false,
   iconColor = "text-blue-600",
-  bgColor = "#F6FAFF",
+  bgColor = "bg-bgFAQ", // Changed from raw hex code
   defaultOpenIndex = null,
 }: FAQsProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex ?? null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -45,11 +43,15 @@ export default function FAQ({
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
-                {openIndex === index ? <span className={iconColor}>
-                                        <Image alt="icon" src="/minus-sign.svg" width={30} height={30} />
-                                      </span> : <span className={iconColor}>
-                                                              <Image alt="icon" src="/plus-sign.svg" width={30} height={30} />
-                                                            </span>}
+                {openIndex === index ? (
+                  <span className={iconColor}>
+                    <Image alt="icon" src="/minus-sign.svg" width={30} height={30} />
+                  </span>
+                ) : (
+                  <span className={iconColor}>
+                    <Image alt="icon" src="/plus-sign.svg" width={30} height={30} />
+                  </span>
+                )}
               </button>
               {openIndex === index && <div className="p-5 pt-0 text-gray-600">{faq.answer}</div>}
             </div>
