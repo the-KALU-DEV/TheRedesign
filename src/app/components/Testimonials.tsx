@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import TitleSubtitle from "./TitleSubtitle";
 
 const testimonials = [
   {
@@ -53,7 +54,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="w-full py-28 bg-gray-50">
+    <section className="w-full py-4 md:py-8 bg-gray-50">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 items-center">
           {/* Left Image Section (1/3 Width on Large Screens) */}
@@ -61,7 +62,7 @@ export default function Testimonials() {
             <div className="relative w-[340px] h-[440px] md:w-[420px] md:h-[500px] flex justify-center">
               <Image
                 src="/Testimonial.svg"
-                alt="Testimonial"
+                alt="Testimonial" 
                 layout="fill"
                 objectFit="contain"
               />
@@ -69,19 +70,12 @@ export default function Testimonials() {
           </div>
 
           {/* Right Content Section */}
-          <div className="flex flex-col space-y-10 text-center items-center lg:col-span-2 lg:text-left lg:items-start">
+          <div className="flex flex-col space-y-4 md:space-y-6 text-center items-center lg:col-span-2 lg:text-left lg:items-start">
             {/* Title */}
-            <div className="space-y-3">
-              <h5 className="text-green-600 text-lg font-semibold">
-                Testimonials
-              </h5>
-              <h2 className="text-3xl md:text-5xl font-bold">
-                Our Success Story
-              </h2>
-            </div>
+            <TitleSubtitle title="Testimonials" subtitle="Our Success Story"/>
 
             {/* Profile */}
-            <div className="flex flex-col items-center lg:flex-row lg:items-center gap-6">
+            <div className="flex flex-col items-center p-2 lg:flex-row lg:items-center gap-6">
               <Image
                 src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].name}

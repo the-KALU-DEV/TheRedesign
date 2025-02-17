@@ -90,6 +90,7 @@
 
 import FeatureCard from "./FeatureCard";
 import { motion } from "framer-motion";
+import TitleSubtitle from "./TitleSubtitle";
 
 const features = [
   {
@@ -190,16 +191,9 @@ const containerVariants = {
 
 export default function Features() {
   return (
-    <section className="w-full py-20 bg-gray-50">
+    <section className="w-full py-10 bg-gray-50">
     <div className="container mx-auto px-6 lg:px-12">
-    <div className="flex gap-4 flex-col items-center">
-        <p className="mt-4 font-bold text-xl text-[#2AB255] md:text-2xl leading-relaxed tracking-tight max-w-2xl text-center">
-          What We Offer
-        </p>
-        <h2 className="text-3xl mt-2 mb-16 md:text-5xl tracking-tighter text-center font-semibold">
-          Why Should You Join codetivite?
-        </h2>                    
-      </div>
+    <TitleSubtitle title="What We Offer" subtitle="Why Should You Join codetivite?" centered className="pb-6 md:pb-8" />
         
     <motion.div
       className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"

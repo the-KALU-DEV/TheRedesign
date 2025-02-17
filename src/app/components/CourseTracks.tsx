@@ -1,4 +1,5 @@
 import CourseCard from "./CourseCard";
+import TitleSubtitle from "./TitleSubtitle";
 
 const courses = [
   {
@@ -31,14 +32,7 @@ export default function CourseTracks() {
   return (
     <section className="w-full py-20 bg-gray-50">
     <div className="container mx-auto px-6 lg:px-12">
-    <div className="flex gap-4 flex-col items-center">
-    <h5 className="text-green-600 text-lg font-semibold text-center">See Our Courses</h5>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mt-2">
-          Check Out Our Course Tracks
-        </h2>                    
-      </div>
-
-        
+      <TitleSubtitle title="See Our Courses" subtitle="Check Out Our Course Tracks" centered/>      
 
         {/* Course Cards Grid */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

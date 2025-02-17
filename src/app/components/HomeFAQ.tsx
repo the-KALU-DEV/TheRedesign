@@ -63,6 +63,7 @@
 
 import FAQ from "./FAQ";
 import { twMerge } from 'tailwind-merge';
+import TitleSubtitle from "./TitleSubtitle";
 
 const faqs = [
   {
@@ -108,7 +109,7 @@ const faqs = [
 export default function HomeFAQ() {
   return (
     <section className={twMerge("py-16 bg-gray-50 px-30 lg:px-32", true ? "w-full " : "container mx-auto")}>
-      <h5 className="text-green-600 text-lg font-semibold text-center">FAQs</h5>
+      <TitleSubtitle title="FAQs" centered />
         <FAQ
           faqs={faqs}
           fullWidth={true}

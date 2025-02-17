@@ -78,13 +78,13 @@ import CardFlip from "./CardFlip";
 
 export default function Hero() {
   const images = [
-    { frontImage: "/empowerment.png", backText: "Empowerment" },
-    { frontImage: "/opportunity.png", backText: "Opportunity" },
-    { frontImage: "/community.png", backText: "Community" },
+    { frontImage: "/empowerment.svg", backText: "Empowerment" },
+    { frontImage: "/opportunity.svg", backText: "Opportunity" },
+    { frontImage: "/community.svg", backText: "Community" },
   ];
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center text-center py-20 lg:py-40 gap-12">
+    <div className="relative container w-full flex flex-col items-center justify-center text-center py-10 lg:py-20 gap-4 md:gap-6">
       {/* Background Vector */}
       <div className="absolute inset-0 w-full h-full -z-10">
         <Image
@@ -93,14 +93,14 @@ export default function Hero() {
           fill
           className="object-cover w-full h-full"
         />
-      </div>
+      </div> 
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center gap-4 relative z-10">
-        <h1 className="text-6xl md:text-7xl tracking-tighter text-center font-regular">
+      <div className="flex flex-col items-center gap-4 relative z-10 p-8 md:p-10">
+        <h1 className="text-4xl md:text-6xl tracking-tighter text-center font-regular">
           Land Your Dream Tech Job Fast, EVEN In A Highly Competitive Job Market.
         </h1>
-        <p className="text-xl font-normal md:text-xl leading-relaxed tracking-tight text-[#575757] max-w-2xl">
+        <p className="text-sm font-normal md:text-xl leading-relaxed tracking-tight text-[#575757] max-w-2xl">
           Join Codetivite And Become The Employer’s Favourite Techie.
         </p>
       </div>
@@ -114,7 +114,7 @@ export default function Hero() {
 
       {/* Call-to-Action Button */}
       <div className="flex relative z-10">
-        <StyledButton className="w-full bg-[#2AB255] text-white px-6 py-2 rounded-full hover:bg-green-600 transition">
+        <StyledButton className="w-full bg-[#2AB255] text-white px-6 rounded-full hover:bg-green-600 transition">
           Get our Free Resources
         </StyledButton>
       </div>

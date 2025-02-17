@@ -80,9 +80,9 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white py-16 px-6 md:px-20 relative">
       {/* Upper Section - Newsletter */}
-      <div className="flex flex-col md:flex-row justify-between items-center p-8 space-y-6 md:space-y-0">
+      <div className="flex flex-col md:flex-row justify-between items-center p-8 gap-2 md:gap-3 lg:gap-4 space-y-6 md:space-y-0">
         <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-          <Image src="/footer-image.svg" alt="Newsletter Image" width={300} height={200} className="w-4/5 md:w-1/2" />
+          <Image src="/footer-image.svg" alt="Newsletter Image" width={350} height={290} sizes="(max-width: 500px) 100vw, 300px, (max-width: 1040px) 27vw, 350px, (max-width: 2040px) 400px" className="w-4/5 md:w-full" />
         </div>
         <div className="w-full md:w-2/3 text-center md:text-left">
           <h2 className="text-3xl font-bold">Subscribe to our Newsletter</h2>

@@ -6,7 +6,7 @@ export default function PreFooter() {
   return (
     <section className="relative w-full flex justify-center px-4 sm:px-12 mt-16">
       {/* Background container */}
-      <div className="relative rounded-t-2xl w-full bg-blue-600 text-white px-6 sm:px-16 py-20 flex flex-col items-center text-center ">
+      <div className="relative rounded-t-[24px] lg:rounded-t-[40px] w-full bg-blue-600 text-white px-6 sm:px-16 py-20 flex flex-col items-center text-center ">
 
         {/* Content */}
         <h1 className="text-3xl sm:text-5xl font-bold relative max-w-4xl">

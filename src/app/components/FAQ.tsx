@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
+import NavbarDropdown from "./icons/NavbarDropdown";
+import Image from "next/image";
 
 interface FAQItem {
   question: string;
@@ -20,8 +22,8 @@ interface FAQsProps {
 export default function FAQ({
   faqs = [], // Default to an empty array to avoid undefined issues
   fullWidth = false,
-  iconColor = "text-green-600",
-  bgColor = "bg-gray-100",
+  iconColor = "text-blue-600",
+  bgColor = "#F6FAFF",
   defaultOpenIndex = null,
 }: FAQsProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
@@ -31,19 +33,23 @@ export default function FAQ({
   };
 
   return (
-    <section className={twMerge("py-16", fullWidth ? "w-full" : "container mx-auto px-6 lg:px-12")}>
+    <section className={twMerge("py-2", fullWidth ? "w-full" : "container mx-auto px-6 lg:px-12")}>
       <h2 className="text-3xl md:text-4xl font-bold text-center">Frequently Asked Questions</h2>
 
-      <div className="mt-10 space-y-4">
+      <div className="mt-6 md:mt-8 space-y-4">
         {faqs.length > 0 ? (
           faqs.map((faq, index) => (
-            <div key={index} className={twMerge(bgColor, "rounded-lg shadow-md border border-gray-200")}>
+            <div key={index} className={twMerge(bgColor, "rounded-lg border border-gray-200")}>
               <button
                 className="w-full flex justify-between items-center p-5 font-semibold text-left"
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
-                {openIndex === index ? <FaMinus className={iconColor} /> : <FaPlus className={iconColor} />}
+                {openIndex === index ? <span className={iconColor}>
+                                        <Image alt="icon" src="/minus-sign.svg" width={30} height={30} />
+                                      </span> : <span className={iconColor}>
+                                                              <Image alt="icon" src="/plus-sign.svg" width={30} height={30} />
+                                                            </span>}
               </button>
               {openIndex === index && <div className="p-5 pt-0 text-gray-600">{faq.answer}</div>}
             </div>
