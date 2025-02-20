@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 
 interface CardFlipProps {
@@ -35,3 +36,4 @@ export default function CardFlip({ frontImage, backText }: CardFlipProps) {
     </div>
   );
 }
+

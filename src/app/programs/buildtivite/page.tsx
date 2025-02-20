@@ -1,7 +1,9 @@
-import BuildtiviteCourses from "@/app/components/BuildtiviteCourses";
-import BuildtiviteHero from "@/app/components/BuildtiviteHero";
-import BuildtiviteFAQ from "@/app/components/BuildtiviteFAQ";
-import WhyBuildtivite from "@/app/components/WhyBuildtivite";
+
+import React from "react";
+import WhyBuildtivite from "../../components/WhyBuildtivite";
+import BuildtiviteFAQ from "../../components/BuildtiviteFAQ";
+import BuildtiviteCourses from "../../components/BuildtiviteCourses";
+import BuildtiviteHero from "../../components/BuildtiviteHero";
 
 export default function Contact() {
 

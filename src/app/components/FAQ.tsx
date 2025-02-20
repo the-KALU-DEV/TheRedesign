@@ -124,7 +124,7 @@ export default function FAQ({
                 className="w-full flex justify-between items-center px-6 py-4 text-left font-medium text-gray-800"
                 onClick={() => toggleFAQ(index)}
               >
-                <span>{faq.question}</span>
+                <span className="font-semibold">{faq.question}</span>
                 <span className={twMerge("ml-auto", iconColor)}>
                   {openIndex === index ? (
                     <FaMinus className="w-4 h-4 text-blue-500" />

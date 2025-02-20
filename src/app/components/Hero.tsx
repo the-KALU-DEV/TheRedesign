@@ -72,6 +72,7 @@
 
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import StyledButton from "./StyledButton";
 import CardFlip from "./CardFlip";
@@ -97,10 +98,10 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="flex flex-col items-center gap-4 relative z-10 p-12 md:p-16">
-        <h1 className="text-4xl md:text-6xl tracking-tighter text-center font-bold">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-tighter text-center font-bold">
           Land Your Dream Tech Job Fast, EVEN In A Highly Competitive Job Market.
         </h1>
-        <p className="text-sm font-normal md:text-xl leading-relaxed tracking-tight text-[#575757] max-w-2xl">
+        <p className="text-md md:text-lg font-normal lg:text-2xl leading-relaxed tracking-tight text-[#575757] max-w-2xl">
           Join Codetivite And Become The Employer’s Favourite Techie.
         </p>
       </div>

@@ -1,7 +1,8 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import StyledButton from "@/app/components/StyledButton";
+import StyledButton from "./StyledButton";
 import { twMerge } from "tailwind-merge";
 
 export default function BuildtiviteHero() {
@@ -19,7 +20,7 @@ export default function BuildtiviteHero() {
       </p>
 
       {/* CTA Button */}
-      <Link href="buildtivite/register">
+      <Link href="/userinfo">
         <StyledButton
           className={twMerge(
             "mt-6 px-6 py-3 text-white text-lg font-medium bg-green-600 rounded-full",

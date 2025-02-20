@@ -48,7 +48,7 @@ const navLinks: NavLinkType[] = [
 
 function NavbarDropdown({ dropdown }: { dropdown: DropdownItem[] }) {
   return (
-    <ul className="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md p-2 animate-fade-in">
+    <ul className="absolute left-0 mt-3 w-40 bg-white shadow-md rounded-md p-2 animate-fade-in">
       {dropdown.map((subLink, index) => (
         <li key={index} className="px-4 py-2 flex items-center gap-2">
           {/* FIX: Ensure icon exists before rendering Image */}
@@ -87,7 +87,7 @@ export default function Navbar() {
                       onClick={() =>
                         setDropdownOpen(dropdownOpen === index ? null : index)
                       }
-                      className="flex items-center gap-2 hover:text-green-700 transition"
+                      className="flex items-center gap-2 text-green-500 hover:text-green-700 transition"
                     >
                       {link.title}
 

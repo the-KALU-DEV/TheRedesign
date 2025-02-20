@@ -27,7 +27,7 @@ export default function FeatureCard({ icon, title, description }: FeatureCardPro
           <h3 className="text-lg font-semibold text-black">{title}</h3>
         </div>
         <p className="mt-4 text-gray-600 line-clamp-4 flex-grow">{description}</p>
-        <Link href="" className="underline underline-offset-4 text-gray-600 mt-auto">Read More</Link> 
+        {/* <Link href="" className="underline underline-offset-4 text-gray-600 mt-auto">Read More</Link>  */}
       </div>
 
       {/* Hover Overlay */}
@@ -43,7 +43,7 @@ export default function FeatureCard({ icon, title, description }: FeatureCardPro
             <h3 className="text-lg font-semibold text-gray-200">{title}</h3>
           </div>
           <p className="mt-4 text-gray-300 line-clamp-4 flex-grow">{description}</p>
-          <p className="underline underline-offset-4 text-gray-200 mt-auto">Read More</p> {/* Always at bottom */}
+          {/* <Link className="underline underline-offset-4 text-gray-200 mt-auto">Read More</Link> */}
         </div>
       </div>
     </motion.div>

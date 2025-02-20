@@ -1,5 +1,7 @@
 import CourseCard from "./CourseCard";
 import TitleSubtitle from "./TitleSubtitle";
+import React from "react";
+
 
 const courses = [
   {
