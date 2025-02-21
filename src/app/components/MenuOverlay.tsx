@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import NavLink from "./NavLink";
 import NavbarDropdown from "./icons/NavbarDropdown";
 import StyledButton from "./StyledButton";

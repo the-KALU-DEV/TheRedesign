@@ -75,7 +75,7 @@ export default function Payment() {
         <button
           type="button"
           onClick={() => router.back()}
-          className="underline text-green-500 hover:text-green-300"
+          className="text-green-500 hover:text-green-300"
         >
           Return to previous page
         </button>
