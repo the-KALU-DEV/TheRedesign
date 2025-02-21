@@ -347,7 +347,7 @@ export default function BuildtiviteHero() {
           alt="Metasploit"
           width={60}
           height={60}
-          className="absolute bottom-[140px] right-[220px]"
+          className="absolute bottom-[140px] right-[200px]"
         />
         <Image
           src="/python.svg"

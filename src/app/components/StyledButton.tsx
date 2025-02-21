@@ -78,7 +78,7 @@ import { twMerge } from "tailwind-merge";
 
 type MotionButtonProps = {
   children: React.ReactNode;
-  onClickAction?: () => void; // server-action style naming
+  onClickAction?: () => void; 
   className?: string;
   muted?: boolean;
   icon?: string | React.ReactNode;
@@ -93,7 +93,7 @@ export default function StyledButton({
   icon,
   iconPosition = "left",
 }: MotionButtonProps) {
-  // Renders an <Image> if `icon` is a string, otherwise renders the passed React node
+
   const renderIcon = () => {
     if (!icon) return null;
     if (typeof icon === "string") {
@@ -116,7 +116,7 @@ export default function StyledButton({
       whileTap={{ scale: 1.03 }}
       onClick={onClickAction}
       className={twMerge(
-        // Removed "w-full" from the default classes
+
         "px-4 py-2 rounded-full shadow-none inline-flex items-center justify-center",
         muted ? "bg-gray-200 text-gray-700" : "bg-green-500 text-white",
         className
