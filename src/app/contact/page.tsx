@@ -1,10 +1,10 @@
-import ContactUs from "../components/ContactUs";
+// import ContactUs from "../components/ContactUs";
 
-export default function Contact() {
+// export default function Contact() {
 
-    return (
-        <div className="container">
-            <ContactUs />
-        </div>
-    );
-}
+//     return (
+//         <div className="container">
+//             <ContactUs />
+//         </div>
+//     );
+// }

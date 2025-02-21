@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
@@ -18,7 +19,7 @@ export default function NavLink({ href, title, className }: NavLinkProps) {
     <Link
       href={href}
       className={clsx(
-        "text-black hover:text-green-600 hover:font-semibold transition relative",
+        "text-gray-600 hover:text-gray-900 hover:font-semibold transition relative",
         pathname === href && "text-green-500 font-semibold",
         className // ✅ Allow passing optional className
       )}

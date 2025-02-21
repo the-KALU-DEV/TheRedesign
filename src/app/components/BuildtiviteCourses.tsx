@@ -55,13 +55,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import TitleSubtitle from "./TitleSubtitle";
+import StyledButton from "./StyledButton";
 
 const items = [
-  { src: "/software-engineering.svg" },
-  { src: "/product-design.svg" },
-  { src: "/product-management.svg" },
-  { src: "/technical-writing.svg" },
-  { src: "/cyber-security.svg" },
+  { src: "/software-engineering.svg", title: "Software Engineering", description: "Build AI models, developer tools, and blockchain applications." },
+  { src: "/product-design.svg", title: "Product Design", description: "Create stunning UI/UX, design systems, and accessible interfaces." },
+  { src: "/product-management.svg", title: "Product Management", description: "Manage Agile teams, define product roadmaps, and conduct user research." },
+  { src: "/technical-writing.svg", title: "Technical Writing", description: "Create API documentation, technical guides, and open-source contributions." },
+  { src: "/cyber-security.svg", title: "Cyber Security", description: "Perform security audits, risk assessments, and penetration testing." }
 ];
 
 // Parent container animation
@@ -85,6 +86,7 @@ export default function BuildtiviteCourses() {
       <TitleSubtitle 
         title="Our Courses" 
         subtitle="Check Out Our Course Tracks" 
+        className="mb-6"
         centered 
       />
       <motion.div
@@ -92,7 +94,7 @@ export default function BuildtiviteCourses() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 w-full"
+        className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 w-full"
       >
         {items.map((item, index) => (
           <motion.div 
@@ -101,11 +103,11 @@ export default function BuildtiviteCourses() {
             className="w-full h-full"
           >
             <div 
-              className="group relative w-full h-48 md:h-60" 
+              className="group relative w-full h-48" 
               style={{ perspective: "1000px" }}
             >
               <div 
-                className="relative w-full h-full rounded-lg transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+                className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
               >
                 {/* Front Side */}
                 <div
@@ -117,24 +119,25 @@ export default function BuildtiviteCourses() {
                     alt="Course Image"
                     fill
                     sizes="(max-width: 500px) 90vw, (max-width: 1200px) 50vw, 27vw"
-                    className="object-cover rounded-lg"
+                    className="object-cover"
                   />
                 </div>
 
                 {/* Back Side */}
                 <div 
-                  className="absolute inset-0 rounded-lg bg-gray-800 text-white flex flex-col justify-center items-start p-4" 
+                  className="absolute inset-0 rounded-lg bg-black text-white flex flex-col justify-evenly items-start p-4" 
                   style={{ 
                     backfaceVisibility: "hidden", 
                     transform: "rotateY(180deg)" 
                   }}
                 >
-                  <p className="text-sm text-left mb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <h3 className="text-md mt-4">{item.title}</h3>
+                  <p className="text-xs text-left mb-2">
+                    {item.description}
                   </p>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded">
-                    Register
-                  </button>
+                  <StyledButton className="mt-2">
+                    Apply Now!
+                  </StyledButton>
                 </div>
               </div>
             </div>

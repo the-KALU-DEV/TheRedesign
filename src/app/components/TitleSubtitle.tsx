@@ -13,13 +13,20 @@ interface ContentProps {
 
 export default function TitleSubtitle({title, subtitle, description, centered,leftAligned, className}: ContentProps) {
     return (
-        <div className={twMerge( "space-y-2 p-2 md:p-4 lg:p-6", leftAligned ? "text-start" : "", centered ? "items-center text-center" : "", className)}>
+        <div className={twMerge( "space-y-2", leftAligned ? "text-start" : "", centered ? "items-center text-center" : "", className)}>
             { title && <h5 className="text-green-600 text-lg font-semibold"> {title} </h5> }
             { subtitle && <h2 className="text-3xl md:text-5xl font-bold"> {subtitle} </h2> }
-            { description && <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 leading relaxed">{description}</p> }
+            { description && <p className="text-gray-600 text-lg leading-relaxed mx-auto lg:mx-0 leading relaxed">{description}</p> }
         </div>
     );
 }
+
+{/* <div className={twMerge( "space-y-2 p-2 md:p-4 lg:p-6", leftAligned ? "text-start" : "", centered ? "items-center text-center" : "", className)}>
+            { title && <h5 className="text-green-600 text-lg font-semibold"> {title} </h5> }
+            { subtitle && <h2 className="text-3xl md:text-5xl font-bold"> {subtitle} </h2> }
+            { description && <p className="text-gray-600 text-lg leading-relaxed mx-auto lg:mx-0 leading relaxed">{description}</p> }
+        </div> */}
+
 
 {/* <div className="flex flex-col flex-1 justify-start space-y-2"> text-center
             {subtitle && (

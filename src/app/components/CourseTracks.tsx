@@ -8,7 +8,7 @@ const courses = [
     //title: "Software Development",
     description:
       "Harness and sharpen your passion with 'REACT' together with other programming languages.",
-    image: "/software-development.png", 
+    image: "/software-development.svg", 
     tag: "Software Development",
     tagColor: "#2AB255", // Green
   },
@@ -16,7 +16,7 @@ const courses = [
     //title: "Product Design",
     description:
       "Master product design and collaborate with teams to create innovative user-friendly products.",
-    image: "/product-design.png", 
+    image: "/pd.svg", 
     tag: "Product Design",
     tagColor: "#0A68EC", // Blue
   },
@@ -24,7 +24,7 @@ const courses = [
     //title: "Product Management",
     description:
       "Learn the art of product strategy development and kickstart a career in Tech.",
-    image: "/product-management.png", 
+    image: "/pm.svg", 
     tag: "Product Management",
     tagColor: " #FCE459", // Yellow
   },

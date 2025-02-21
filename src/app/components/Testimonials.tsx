@@ -73,7 +73,7 @@ export default function Testimonials() {
           {/* Right Content Section */}
           <div className="flex flex-col space-y-4 md:space-y-6 text-center items-center lg:col-span-2 lg:text-left lg:items-start">
             {/* Title */}
-            <TitleSubtitle title="Testimonials" subtitle="Our Success Story"/>
+            <TitleSubtitle title="Testimonials" subtitle="Our Success Story" className="-px-6"/>
 
             {/* Profile */}
             <div className="flex flex-col items-center p-2 lg:flex-row lg:items-center gap-6">
@@ -100,12 +100,12 @@ export default function Testimonials() {
             </p>
 
             {/* Pagination Dots */}
-            <div className="flex space-x-3 justify-center lg:justify-start">
+            <div className="flex space-x-2 justify-center lg:justify-start">
               {testimonials.map((_, index) => (
                 <span
                   key={index}
                   className={clsx(
-                    "h-4 w-4 rounded-full transition-colors duration-300",
+                    "h-2 w-2 rounded-full transition-colors duration-300",
                     currentIndex === index ? "bg-green-600" : "bg-gray-300"
                   )}
                 />

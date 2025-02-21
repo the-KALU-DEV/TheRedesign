@@ -1,18 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import MenuOverlay from "./MenuOverlay";
 import StyledButton from "./StyledButton";
 import NavbarDropdownIcon from "./icons/NavbarDropdown"; // Ensure this path is correct
+import NavbarDropdown from "./NavbarDropdown"; // Updated dropdown component
 
 interface DropdownItem {
   title: string;
   href: string;
-  icon?: string; // FIX: Ensure it's a string (image path), not ReactNode
+  icon?: string;
 }
 
 interface NavLinkType {
@@ -23,6 +25,10 @@ interface NavLinkType {
 
 const icons = {
   flag: "/programming-flag.svg",
+  blog: "/blog.svg",
+  ai: "/ai.svg",
+  webinar: "/webinar.svg",
+  ebook: "/ebook.svg"
 };
 
 const navLinks: NavLinkType[] = [
@@ -38,36 +44,38 @@ const navLinks: NavLinkType[] = [
   {
     title: "Resources",
     dropdown: [
-      { title: "E-Books", href: "/resources/ebooks" },
-      { title: "Free Tools", href: "/resources/free-tools" },
-      { title: "Webinars", href: "/resources/webinars" },
+      { title: "Our Blog", href: "/resources/our-blog", icon: icons.blog},
+      { title: "Free Ai Tools", href: "/resources/free-ai-tools", icon: icons.ai},
+      { title: "Webinars", href: "/resources/webinars", icon: icons.webinar },
+      { title: "Free E-books", href: "/resources/free-ebooks", icon: icons.ebook }
+      // Four more icons can be added here if needed.
     ],
   },
   { title: "Contact Us", href: "/contact" },
 ];
 
-function NavbarDropdown({ dropdown }: { dropdown: DropdownItem[] }) {
-  return (
-    <ul className="absolute left-0 mt-3 w-40 bg-white shadow-md rounded-md p-2 animate-fade-in">
-      {dropdown.map((subLink, index) => (
-        <li key={index} className="px-4 py-2 flex items-center gap-2">
-          {/* FIX: Ensure icon exists before rendering Image */}
-          {subLink.icon && (
-            <Image src={subLink.icon} alt={subLink.title} width={20} height={20} />
-          )}
-          <NavLink href={subLink.href} title={subLink.title} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
+  // Now storing the open dropdown as a string (link title) or null.
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  // Close dropdown if clicking outside the nav
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setDropdownOpen(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <nav className="fixed z-50 w-full top-0 bg-[#F8F8F8] shadow-xs">
+    <nav ref={navRef} className="fixed z-50 w-full top-0 bg-[#F8F8F8] shadow-xs">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
@@ -77,38 +85,63 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden min-[891px]:flex flex-1 justify-center">
           <ul className="flex space-x-8">
-            {navLinks.map((link, index) => (
-              <li key={index} className="relative group">
-                {link.href ? (
-                  <NavLink href={link.href} title={link.title} />
-                ) : (
-                  <>
-                    <button
-                      onClick={() =>
-                        setDropdownOpen(dropdownOpen === index ? null : index)
-                      }
-                      className="flex items-center gap-2 text-green-500 hover:text-green-700 transition"
-                    >
-                      {link.title}
-
-                      {/* Dropdown Icon (Restored) */}
-                      <span
-                        className={`transform transition-transform ${
-                          dropdownOpen === index ? "rotate-180" : "rotate-0"
+            {navLinks.map((link, index) => {
+              // If link has href, compare directly; if dropdown exists, check if any sublink matches
+              const isActive = link.href
+                ? pathname === link.href
+                : link.dropdown
+                ? link.dropdown.some((sub) => sub.href === pathname)
+                : false;
+              return (
+                <li key={index} className="relative group">
+                  {link.href ? (
+                    <NavLink
+                      href={link.href}
+                      title={link.title}
+                      className={`transition-colors ${
+                        isActive
+                          ? "text-green-500"
+                          : "text-black hover:text-gray-800"
+                      }`}
+                    />
+                  ) : (
+                    <>
+                      <button
+                        onClick={() =>
+                          setDropdownOpen(
+                            dropdownOpen === link.title ? null : link.title
+                          )
+                        }
+                        className={`flex items-center gap-2 transition-colors ${
+                          isActive
+                            ? "text-green-500"
+                            : "text-gray-600 hover:text-gray-900"
                         }`}
                       >
-                        <NavbarDropdownIcon isActive={dropdownOpen === index} />
-                      </span>
-                    </button>
-
-                    {/* Dropdown Menu */}
-                    {dropdownOpen === index && link.dropdown && (
-                      <NavbarDropdown dropdown={link.dropdown} />
-                    )}
-                  </>
-                )}
-              </li>
-            ))}
+                        {link.title}
+                        <span
+                          className={`transform transition-transform ${
+                            dropdownOpen === link.title
+                              ? "rotate-180"
+                              : "rotate-0"
+                          }`}
+                        >
+                          <NavbarDropdownIcon
+                            isActive={dropdownOpen === link.title}
+                          />
+                        </span>
+                      </button>
+                      {dropdownOpen === link.title && link.dropdown && (
+                        <NavbarDropdown
+                          dropdown={link.dropdown}
+                          onLinkClickAction={() => setDropdownOpen(null)}
+                        />
+                      )}
+                    </>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
