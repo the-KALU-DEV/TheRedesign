@@ -23,7 +23,7 @@ export default function CourseCard({
       : "text-gray-900";
 
   return (
-    <div className="bg-[#F8F8F8EE] shadow-md rounded-2xl overflow-hidden p-4 flex flex-col h-full">
+    <div className="bg-[#F8F8F8EE] rounded-2xl overflow-hidden p-4 flex flex-col h-full">
       {/* Image Section */}
       <div className="relative w-full h-56 rounded-lg overflow-hidden">
         <Image 

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import NavbarDropdown from "./icons/NavbarDropdown";
+import StyledButton from "./StyledButton";
 
 interface MenuOverlayProps {
   links: { title: string; href?: string; dropdown?: { title: string; href: string }[] }[];
@@ -21,7 +22,7 @@ export default function MenuOverlay({ links }: MenuOverlayProps) {
               <NavLink
                 href={link.href}
                 title={link.title}
-                className="block py-3 px-6 w-full text-center text-black hover:text-green-700 transition"
+                className="block py-3 px-6 w-full text-start text-black hover:text-green-700 transition"
               />
             ) : (
               <>
@@ -29,21 +30,20 @@ export default function MenuOverlay({ links }: MenuOverlayProps) {
                   onClick={() =>
                     setOpenDropdown(openDropdown === index ? null : index)
                   }
-                  className="flex items-center justify-center gap-2 px-6 py-3 w-full text-black hover:text-green-700 transition"
+                  className="flex items-center justify-start gap-2 px-6 py-3 w-full text-black hover:text-green-700 transition"
                 >
                   {link.title}
                   <NavbarDropdown isActive={openDropdown === index} />
                 </button>
 
-                {/* Dropdown Content (Same Height) */}
-                {openDropdown === index && (
+                {openDropdown === index && link.dropdown && (
                   <ul className="mt-1 bg-gray-100 rounded-md w-full animate-fade-in">
-                    {link.dropdown?.map((subLink, subIndex) => (
+                    {link.dropdown.map((subLink, subIndex) => (
                       <li key={subIndex} className="w-full">
                         <NavLink
                           href={subLink.href}
                           title={subLink.title}
-                          className="block py-3 px-6 w-full text-black hover:bg-gray-200 text-center"
+                          className="block py-3 px-6 w-full text-black hover:bg-gray-200 text-start"
                         />
                       </li>
                     ))}
@@ -55,11 +55,11 @@ export default function MenuOverlay({ links }: MenuOverlayProps) {
         ))}
 
         {/* Get Started Button */}
-        <Link href="/get-started" className="w-full">
-          <button className="w-full py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition">
+        <div className="w-full px-6 text-left">
+          <StyledButton onClickAction={() => {}} className="w-fit">
             Get Started
-          </button>
-        </Link>
+          </StyledButton>
+        </div>
       </ul>
     </div>
   );
