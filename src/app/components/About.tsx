@@ -32,7 +32,7 @@ export default function About() {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-10 ">
       <ImageWithText
-        imageSrc="/codetivitelearning.png"
+        imageSrc="/codetivitelearning.svg"
         imageAlt="Tech Learner" >
         <TextBlock title="codetivite is a new tech learning platform."
           subtitle="About us:"
@@ -45,7 +45,7 @@ Everything we do at Codetivite is what we call: Practical-based-learning. We wil
 
 
       <ImageWithText
-        imageSrc="/learnwithus.png"
+        imageSrc="/learnwithus.svg"
         imageAlt="User"
         reverse>
         <TextBlock title="Our Mission is to help you as a new Techie."
