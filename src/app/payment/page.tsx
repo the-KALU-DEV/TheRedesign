@@ -171,7 +171,7 @@ export default function Payment() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const storedData = localStorage.getItem("userData");
+      const storedData = localStorage.getItem("userInfo");
       if (storedData) {
         setUserData(JSON.parse(storedData));
       }
